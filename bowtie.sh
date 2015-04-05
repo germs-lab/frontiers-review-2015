@@ -14,3 +14,4 @@ samtools sort $REF.$READS.bam $REF.$READS.bam.sorted
 #SRR172903.NC005008.bam.sorted.bam
 samtools index $REF.$READS.bam.sorted.bam
 samtools idxstats $REF.$READS.bam.sorted.bam > reads.by.contigs.txt
+#Retrieve and print stats in the index file. The output is TAB delimited with each line consisting of reference sequence name, sequence length, # mapped reads and # unmapped reads.
