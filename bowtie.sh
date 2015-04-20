@@ -4,8 +4,8 @@ READS=$2
 echo "Reference is" $REF 
 echo "Reads are" $READS
 
-/home/ubuntu/notebooks/bowtie2-2.2.5/bowtie2-build $REF $REF-bowtie-index
-/home/ubuntu/notebooks/bowtie2-2.2.5/bowtie2 -x $REF-bowtie-index -U $READS -S $REF.$READS.sam
+bowtie2-2.2.5/bowtie2-build $REF $REF-bowtie-index
+bowtie2-2.2.5/bowtie2 -x $REF-bowtie-index -U $READS -S $REF.$READS.sam
 samtools view -Sb $REF.$READS.sam > $REF.$READS.bam
 #https://broadinstitute.github.io/picard/explain-flags.htmls
 samtools view -c -f 4 $REF.$READS.bam > reads-unmapped.count.txt
